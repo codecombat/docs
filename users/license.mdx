@@ -1,0 +1,14 @@
+---
+openapi: "PUT /users/{handle}/license"
+description:
+  "Grants a user access to the Classroom version up to a certain time. Sets
+  their role to student."
+---
+
+```python
+url = `https://codecombat.com/api/users/${userID}/license`
+json = { ends: new Date('2017-01-01').toISOString() }
+request.put({ url, json, auth }, (err, res) => {
+  console.log(res.body.license) // { ends: '2017-01-01T00:00:00.000Z', active: true }
+})
+```
