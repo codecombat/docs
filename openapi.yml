@@ -1154,12 +1154,15 @@ components:
           $ref: '#/components/schemas/objectIdString'
         name:
           type: string
+          description: The name of the classroom
         members:
           type: array
           items:
             $ref: '#/components/schemas/objectIdString'
+          description: List of _ids of the student members of the classroom
         ownerID:
           $ref: '#/components/schemas/objectIdString'
+          description: The _id of the teacher owner of the classroom.
         description:
           type: string
         courses:
