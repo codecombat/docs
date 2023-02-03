@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: CodeCombat API
-  version: ''
+  version: ""
 paths:
   /auth/login-o-auth:
     get:
@@ -59,8 +59,8 @@ paths:
           schema:
             type: string
       responses:
-        '204':
-          description: ''
+        "204":
+          description: ""
       summary: Login User
       security: &ref_0
         - BasicAuth: []
@@ -78,12 +78,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClanResponse'
+                $ref: "#/components/schemas/ClanResponse"
       summary: Upsert User Into Clan
       security: *ref_0
       requestBody:
@@ -119,12 +119,12 @@ paths:
             type: number
             format: double
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClassroomResponseWithCode'
+                $ref: "#/components/schemas/ClassroomResponseWithCode"
       summary: Get Classroom Details
       security: *ref_0
     post:
@@ -134,8 +134,8 @@ paths:
         - Classrooms
       parameters: []
       responses:
-        '204':
-          description: ''
+        "204":
+          description: ""
       summary: Create a Classroom
       security: *ref_0
       requestBody:
@@ -149,9 +149,9 @@ paths:
                   type: string
                   description: Name of the classroom
                 ownerID:
-                  $ref: '#/components/schemas/objectIdString'
+                  $ref: "#/components/schemas/objectIdString"
                 aceConfig:
-                  $ref: '#/components/schemas/AceConfig'
+                  $ref: "#/components/schemas/AceConfig"
               required:
                 - name
                 - ownerID
@@ -170,12 +170,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClassroomResponse'
+                $ref: "#/components/schemas/ClassroomResponse"
       summary: Upsert a User from Classroom
       security: *ref_0
       requestBody:
@@ -213,12 +213,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClassroomResponse'
+                $ref: "#/components/schemas/ClassroomResponse"
       summary: Delete User from Classroom
       security: *ref_0
       requestBody:
@@ -271,12 +271,12 @@ paths:
             type: number
             format: double
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClassroomResponse'
+                $ref: "#/components/schemas/ClassroomResponse"
       summary: Enroll a User in a Course
       security: *ref_0
       requestBody:
@@ -287,7 +287,7 @@ paths:
               type: object
               properties:
                 userId:
-                  $ref: '#/components/schemas/objectIdString'
+                  $ref: "#/components/schemas/objectIdString"
               required:
                 - userId
   /classrooms/{classroomHandle}/courses/{courseHandle}/remove-enrolled:
@@ -320,12 +320,12 @@ paths:
             type: number
             format: double
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClassroomResponse'
+                $ref: "#/components/schemas/ClassroomResponse"
       summary: Remove a User from a Classroom
       security: *ref_0
       requestBody:
@@ -336,7 +336,7 @@ paths:
               type: object
               properties:
                 userId:
-                  $ref: '#/components/schemas/objectIdString'
+                  $ref: "#/components/schemas/objectIdString"
               required:
                 - userId
   /classrooms/{classroomHandle}/stats:
@@ -380,14 +380,14 @@ paths:
             type: number
             format: double
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/MemberStat'
+                  $ref: "#/components/schemas/MemberStat"
       summary: Get Members Stats for a Classroom
       security: *ref_0
   /classrooms/{classroomHandle}/members/{memberHandle}/sessions:
@@ -411,14 +411,14 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/LevelSessionResponse'
+                  $ref: "#/components/schemas/LevelSessionResponse"
       summary: Get Level Session
       security: *ref_0
   /playtime-stats:
@@ -447,12 +447,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PlaytimeStatsResponse'
+                $ref: "#/components/schemas/PlaytimeStatsResponse"
       summary: Get Playtime Stats
       security: *ref_0
   /license-stats:
@@ -463,12 +463,12 @@ paths:
         - Stats
       parameters: []
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LicenseStatsResponse'
+                $ref: "#/components/schemas/LicenseStatsResponse"
       summary: Get License Stats
       security: *ref_0
   /users:
@@ -486,8 +486,8 @@ paths:
         - Users
       parameters: []
       responses:
-        '204':
-          description: ''
+        "204":
+          description: ""
       summary: Create User
       security: *ref_0
       requestBody:
@@ -502,14 +502,14 @@ paths:
                 email:
                   type: string
                 role:
-                  $ref: '#/components/schemas/UserRole'
+                  $ref: "#/components/schemas/UserRole"
                   description: >-
                     A `"student"` or `"teacher"`. If unset, a home user will be
                     created, unable to join classrooms.
                 preferredLanguage:
                   type: string
                 heroConfig:
-                  $ref: '#/components/schemas/HeroConfig'
+                  $ref: "#/components/schemas/HeroConfig"
                 birthday:
                   type: string
               required:
@@ -535,12 +535,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: "#/components/schemas/UserResponse"
       summary: Get User
       security: *ref_0
     put:
@@ -556,12 +556,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: "#/components/schemas/UserResponse"
       summary: Update User
       security: *ref_0
       requestBody:
@@ -602,14 +602,14 @@ paths:
             type: number
             format: double
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ClassroomResponseWithCode'
+                  $ref: "#/components/schemas/ClassroomResponseWithCode"
       summary: Get Classrooms By User
       security: *ref_0
   /users/{handle}/hero-config:
@@ -626,12 +626,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: "#/components/schemas/UserResponse"
       summary: Get User Hero
       security: *ref_0
       requestBody:
@@ -642,7 +642,7 @@ paths:
               type: object
               properties:
                 thangType:
-                  $ref: '#/components/schemas/objectIdString'
+                  $ref: "#/components/schemas/objectIdString"
   /users/{handle}/ace-config:
     put:
       description: >-
@@ -659,12 +659,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: "#/components/schemas/UserResponse"
       security: *ref_0
       requestBody:
         required: true
@@ -719,12 +719,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: "#/components/schemas/UserResponse"
       summary: Add OAuth2 Identity
       security: *ref_0
       requestBody:
@@ -772,12 +772,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: "#/components/schemas/UserResponse"
       security: *ref_0
       requestBody:
         required: true
@@ -815,12 +815,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: "#/components/schemas/UserResponse"
       summary: Shorten User Subscription
       security: *ref_0
       requestBody:
@@ -859,12 +859,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: "#/components/schemas/UserResponse"
       summary: Grant User License
       security: *ref_0
       requestBody:
@@ -903,12 +903,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserResponse'
+                $ref: "#/components/schemas/UserResponse"
       summary: Shorten User License
       security: *ref_0
       requestBody:
@@ -943,8 +943,8 @@ paths:
           schema:
             type: string
       responses:
-        '204':
-          description: ''
+        "204":
+          description: ""
       summary: Search for User
       security: *ref_0
 components:
@@ -954,7 +954,7 @@ components:
       description: Subset of properties listed here
       properties:
         _id:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         name:
           type: string
         displayName:
@@ -962,9 +962,9 @@ components:
         members:
           type: array
           items:
-            $ref: '#/components/schemas/objectIdString'
+            $ref: "#/components/schemas/objectIdString"
         ownerID:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         description:
           type: string
         type:
@@ -978,23 +978,23 @@ components:
       type: object
       properties:
         state:
-          $ref: '#/components/schemas/State'
+          $ref: "#/components/schemas/State"
         level:
-          $ref: '#/components/schemas/Level'
+          $ref: "#/components/schemas/Level"
         levelID:
           type: string
           description: Level slug like `wakka-maul`
         creator:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         playtime:
           type: integer
           description: Time played in seconds.
         changed:
-          $ref: '#/components/schemas/datetimeString'
+          $ref: "#/components/schemas/datetimeString"
         created:
-          $ref: '#/components/schemas/datetimeString'
+          $ref: "#/components/schemas/datetimeString"
         dateFirstCompleted:
-          $ref: '#/components/schemas/datetimeString'
+          $ref: "#/components/schemas/datetimeString"
         submitted:
           type: boolean
           description: For arenas. Whether or not the level has been added to the ladder.
@@ -1034,15 +1034,15 @@ components:
       type: object
       properties:
         _id:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         stats:
-          $ref: '#/components/schemas/PlayStats'
+          $ref: "#/components/schemas/PlayStats"
     UserResponse:
       type: object
       description: Subset of properties listed here
       properties:
         _id:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         email:
           type: string
         name:
@@ -1050,17 +1050,17 @@ components:
         slug:
           type: string
         role:
-          $ref: '#/components/schemas/roleString'
+          $ref: "#/components/schemas/roleString"
         stats:
-          $ref: '#/components/schemas/UserStats'
+          $ref: "#/components/schemas/UserStats"
         oAuthIdentities:
           type: array
           items:
-            $ref: '#/components/schemas/AuthIdentity'
+            $ref: "#/components/schemas/AuthIdentity"
         subscription:
-          $ref: '#/components/schemas/Subscription'
+          $ref: "#/components/schemas/Subscription"
         license:
-          $ref: '#/components/schemas/License'
+          $ref: "#/components/schemas/License"
     UserStats:
       type: object
       properties:
@@ -1087,14 +1087,14 @@ components:
       type: object
       properties:
         ends:
-          $ref: '#/components/schemas/datetimeString'
+          $ref: "#/components/schemas/datetimeString"
         active:
           type: boolean
     License:
       type: object
       properties:
         ends:
-          $ref: '#/components/schemas/datetimeString'
+          $ref: "#/components/schemas/datetimeString"
         active:
           type: boolean
     objectIdString:
@@ -1109,15 +1109,15 @@ components:
       description: Subset of properties listed here
       properties:
         _id:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         name:
           type: string
         members:
           type: array
           items:
-            $ref: '#/components/schemas/objectIdString'
+            $ref: "#/components/schemas/objectIdString"
         ownerID:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         description:
           type: string
         code:
@@ -1127,14 +1127,14 @@ components:
         courses:
           type: array
           items:
-            $ref: '#/components/schemas/Course'
+            $ref: "#/components/schemas/Course"
         clanId:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
     Course:
       type: object
       properties:
         _id:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         levels:
           type: array
           items:
@@ -1143,29 +1143,29 @@ components:
         enrolled:
           type: array
           items:
-            $ref: '#/components/schemas/objectIdString'
+            $ref: "#/components/schemas/objectIdString"
         instance_id:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
     ClassroomResponse:
       type: object
       description: Subset of properties listed here
       properties:
         _id:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         name:
           type: string
         members:
           type: array
           items:
-            $ref: '#/components/schemas/objectIdString'
+            $ref: "#/components/schemas/objectIdString"
         ownerID:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
         description:
           type: string
         courses:
           type: array
           items:
-            $ref: '#/components/schemas/Course'
+            $ref: "#/components/schemas/Course"
     PlaytimeStatsResponse:
       type: object
       properties:
@@ -1208,7 +1208,7 @@ components:
       type: object
       properties:
         thangType:
-          $ref: '#/components/schemas/objectIdString'
+          $ref: "#/components/schemas/objectIdString"
   securitySchemes:
     BasicAuth:
       type: http

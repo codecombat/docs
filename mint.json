@@ -1,0 +1,93 @@
+{
+  "name": "CodeCombat",
+  "logo": {
+    "light": "/logo/codecombatlogo.png",
+    "dark": "/logo/codecombatlogo.png"
+  },
+  "api": {
+    "baseUrl": "https://codecombat.com/api"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#1FBAB4",
+    "light": "#63DFDA",
+    "dark": "#018A85"
+  },
+  "topbarCtaButton": {
+    "name": "Sign Up",
+    "url": "https://codecombat.com/"
+  },
+  "topbarLinks": [
+    {
+      "name": "Login",
+      "url": "https://codecombat.com/"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://blog.codecombat.com/"
+    },
+    {
+      "name": "Contact Us",
+      "icon": "envelope",
+      "url": "mailto:support@codecombat.com"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": ["introduction", "models"]
+    },
+    {
+      "group": "Users",
+      "pages": [
+        "users/post-users",
+        "users/get-users-handle",
+        "users/put-users-handle",
+        "users/get-classrooms",
+        "users/put-hero-config",
+        "users/put-ace-config",
+        "users/post-o-auth-identities",
+        "users/put-subscription",
+        "users/shorten-subscription",
+        "users/license",
+        "users/shorten-license",
+        "users/property-value",
+        "users/"
+      ]
+    },
+    {
+      "group": "Auth",
+      "pages": ["auth/login"]
+    },
+    {
+      "group": "Clans",
+      "pages": ["clans/members"]
+    },
+    {
+      "group": "Classrooms",
+      "pages": [
+        "classrooms/post-classrooms",
+        "classrooms/get-classrooms",
+        "classrooms/put-handle-members",
+        "classrooms/delete-handle-members",
+        "classrooms/enrolled",
+        "classrooms/remove-enrolled",
+        "classrooms/get-stats",
+        "classrooms/get-sessions"
+      ]
+    },
+    {
+      "group": "Stats",
+      "pages": ["stats/playtime-stats", "stats/license-stats"]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/codecombat",
+    "facebook": "https://www.facebook.com/codecombat",
+    "youtube": "https://www.youtube.com/channel/UCEl7Rs_jtl3hcbnp0xZclQA",
+    "instagram": "https://www.instagram.com/codecombat/"
+  }
+}
