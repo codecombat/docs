@@ -1,5 +1,12 @@
-# Ignore everything
-*
-
-# But not these files...
-!.openapi.yml
+auth/
+clans/
+classrooms/
+log/
+stats/
+users/
+.gitignore
+favicon.png
+introduction.mdx
+mint.json
+models.mdx
+README.md
