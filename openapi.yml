@@ -16,7 +16,7 @@ paths:
         will match this `id` with the OAuthIdentity stored in the user
         information in our db. If everything checks out, the user is logged in
         and redirected to the home page.
-      operationId: authService.get
+      operationId: AuthService.get
       tags:
         - Auth
       parameters:
@@ -67,7 +67,7 @@ paths:
   /clan/{handle}/members:
     put:
       description: Upserts a user into the clan.
-      operationId: clansService.upsertClan
+      operationId: ClansService.upsertClan
       tags:
         - Clans
       parameters:
@@ -101,7 +101,7 @@ paths:
   /classrooms:
     get:
       description: Returns the classroom details for a class code.
-      operationId: classroomsService.get
+      operationId: ClassroomsService.get
       tags:
         - Classrooms
       parameters:
@@ -129,7 +129,7 @@ paths:
       security: *ref_0
     post:
       description: Creates a new empty `Classroom`.
-      operationId: classroomsService.create
+      operationId: ClassroomsService.create
       tags:
         - Classrooms
       parameters: []
@@ -159,7 +159,7 @@ paths:
   /classrooms/{handle}/members:
     put:
       description: Upserts a user into the classroom.
-      operationId: classroomsService.upsertFromClassroom
+      operationId: ClassroomsService.upsertFromClassroom
       tags:
         - Classrooms
       parameters:
@@ -202,7 +202,7 @@ paths:
                 - userId
     delete:
       description: Remove a user from the classroom.
-      operationId: classroomsService.deleteUserFromClassroom
+      operationId: ClassroomsService.deleteUserFromClassroom
       tags:
         - Classrooms
       parameters:
@@ -245,7 +245,7 @@ paths:
         Enrolls a user in a course in a classroom.
         If the course is paid, user must have an active license.
         User must be a member of the classroom.
-      operationId: classroomsService.enrollUserInCourse
+      operationId: ClassroomsService.enrollUserInCourse
       tags:
         - Classrooms
       parameters:
@@ -294,7 +294,7 @@ paths:
     put:
       description: |
         Removes an enrolled user from a course in a classroom.
-      operationId: classroomsService.removeUserFromClassroom
+      operationId: ClassroomsService.removeUserFromClassroom
       tags:
         - Classrooms
       parameters:
@@ -343,7 +343,7 @@ paths:
     get:
       description: |
         Returns a list of all members stats for the classroom.
-      operationId: classroomsService.getMembersStats
+      operationId: ClassroomsService.getMembersStats
       tags:
         - Classrooms
       parameters:
@@ -394,7 +394,7 @@ paths:
     get:
       description: |
         Returns a list of all levels played by the user for the classroom.
-      operationId: classroomsService.getLevelSession
+      operationId: ClassroomsService.getLevelSession
       tags:
         - Classrooms
       parameters:
@@ -424,7 +424,7 @@ paths:
   /playtime-stats:
     get:
       description: Returns the playtime stats
-      operationId: statsService.getPlaytimeStats
+      operationId: StatsService.getPlaytimeStats
       tags:
         - Stats
       parameters:
@@ -458,7 +458,7 @@ paths:
   /license-stats:
     get:
       description: Returns the license stats
-      operationId: statsService.getLicenseStats
+      operationId: StatsService.getLicenseStats
       tags:
         - Stats
       parameters: []
@@ -481,7 +481,7 @@ paths:
         json = { email: 'an@email.com', name: 'Some Username', role: 'student' }
         request.post({ url, json, auth })
         ```
-      operationId: usersService.create
+      operationId: UsersService.create
       tags:
         - Users
       parameters: []
@@ -518,7 +518,7 @@ paths:
   /users/{handle}:
     get:
       description: Returns a `User`.
-      operationId: usersService.get
+      operationId: UsersService.get
       tags:
         - Users
       parameters:
@@ -545,7 +545,7 @@ paths:
       security: *ref_0
     put:
       description: Modify name of a `User`
-      operationId: usersService.update
+      operationId: UsersService.update
       tags:
         - Users
       parameters:
@@ -584,7 +584,7 @@ paths:
       description: >-
         Returns a list of `Classrooms` this user is in (if a student) or owns
         (if a teacher).
-      operationId: usersService.getClassrooms
+      operationId: UsersService.getClassrooms
       tags:
         - Users
       parameters:
@@ -615,7 +615,7 @@ paths:
   /users/{handle}/hero-config:
     put:
       description: Set the user's hero.
-      operationId: usersService.getHero
+      operationId: UsersService.getHero
       tags:
         - Users
       parameters:
@@ -648,7 +648,7 @@ paths:
       description: >-
         Set the user's aceConfig (the settings for the in-game Ace code editor),
         such as whether to enable autocomplete.
-      operationId: usersService.setAceConfig
+      operationId: UsersService.setAceConfig
       tags:
         - Users
       parameters:
@@ -708,7 +708,7 @@ paths:
         `https://oauth.provider/user?t=<%= accessToken %>`) with the access
         token (`1234`). The lookup URL returns `{ id: 'abcd' }` in this case,
         which we save to the user in our db.
-      operationId: usersService.addOAuthIdentity
+      operationId: UsersService.addOAuthIdentity
       tags:
         - Users
       parameters:
@@ -761,7 +761,7 @@ paths:
           console.log(res.body.subscription) // { ends: '2017-01-01T00:00:00.000Z', active: true }
         })
         ```
-      operationId: usersService.updateSubscription
+      operationId: UsersService.updateSubscription
       tags:
         - Users
       parameters:
@@ -804,7 +804,7 @@ paths:
         (err, res) => {
           console.log(res.body.subscription.active) // false
         }) ```
-      operationId: usersService.shortenSubscription
+      operationId: UsersService.shortenSubscription
       tags:
         - Users
       parameters:
@@ -848,7 +848,7 @@ paths:
           console.log(res.body.license) // { ends: '2017-01-01T00:00:00.000Z', active: true }
         })
         ```
-      operationId: usersService.grantLicense
+      operationId: UsersService.grantLicense
       tags:
         - Users
       parameters:
@@ -892,7 +892,7 @@ paths:
         res) => {
           console.log(res.body.license.active) // false
         }) ```
-      operationId: usersService.shortenLicense
+      operationId: UsersService.shortenLicense
       tags:
         - Users
       parameters:
@@ -926,7 +926,7 @@ paths:
   /user-lookup/{property}/{value}:
     get:
       description: Redirects to `/users/{handle}` given a unique, identifying property
-      operationId: usersService.findUser
+      operationId: UsersService.findUser
       tags:
         - Users
       parameters:
